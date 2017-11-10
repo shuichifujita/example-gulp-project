@@ -1,0 +1,28 @@
+@charset "UTF-8";
+// Scss Document
+
+/*/--------------------------------\*\
+!*¡ MIXINS/VARIABLES
+\*\--------------------------------/*/
+
+@import "mixins/mixins";
+
+/*/--------------------------------\*\
+!*¡ PARTIALS(DEFAULT)
+\*\--------------------------------/*/
+
+@import "partials/default";
+
+/*/--------------------------------\*\
+!*¡ PARTIALS
+\*\--------------------------------/*/
+
+@import "partials/header";
+@import "partials/body";
+@import "partials/footer";
+
+/*/--------------------------------\*\
+!*¡ MODULES
+\*\--------------------------------/*/
+
+@import "modules/amoeba";

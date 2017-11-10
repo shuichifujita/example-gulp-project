@@ -1,0 +1,6 @@
+@charset "UTF-8";
+.amoeba {
+	display: block;
+	@include scale(99%, 480px);
+	@include mrgn(0);
+}

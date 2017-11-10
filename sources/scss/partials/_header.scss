@@ -1,0 +1,10 @@
+@charset "UTF-8";
+header {
+	width: 100%;
+	@include pdng(32px);
+	background: $bg + #222;
+	h1 {
+		font-size: 3em;
+		text-align: center;
+	}
+}
