@@ -1,0 +1,40 @@
+{
+  "name": "example-gulp-project",
+  "version": "1.0.0",
+  "description": "to study",
+  "main": "gulpfile?",
+  "scripts": {
+    "test": "console.log('Command not set.')",
+    "gulp": "gulp default",
+    "build": "gulp run",
+    "sync": "gulp sync"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shuichifujita/example-gulp-project.git"
+  },
+  "author": "shuichifujita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shuichifujita/example-gulp-project/issues"
+  },
+  "homepage": "https://github.com/shuichifujita/example-gulp-project#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.2",
+    "babelify": "^8.0.0",
+    "browser-sync": "^2.18.13",
+    "browserify": "^14.5.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-eslint": "^4.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-watch": "^4.3.11",
+    "through2": "^2.0.3"
+  },
+  "dependencies": {
+    "require-dir": "^0.3.2"
+  }
+}
