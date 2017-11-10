@@ -1,0 +1,11 @@
+@charset "UTF-8";
+// main
+main {
+	min-height: 720px;
+	margin: 0 auto;
+	section {
+		@include scale(75%, auto);
+		@include mrgn(32px);
+		border: $bd;
+	}
+}

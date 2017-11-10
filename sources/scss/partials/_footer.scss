@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+footer {
+	width: 100%;
+	@include pdng(32px);
+	background: $bg + #222;
+	p {
+		font-size: 1em;
+		text-align: center;
+	}
+}

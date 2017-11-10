@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/*/--------------------------------\*\
+|*| VARIABLES
+\*\--------------------------------/*/
+$fc: #FFF;
+$bg: #000;
+$bd: 1px solid $fc;
+
+// test colorHighliter
+$hoge-red-01: #F6C;
+$hoge-green-01: #6FC;
+$hoge-blue-01: #6CF;
+$hoge-red-02: #F66;
+$hoge-green-02: #6F6;
+$hoge-blue-02: #66F;
+
+// snow violet lime brown silver skyblue orange
+
+/*/--------------------------------\*\
+|*| MIXIN
+\*\--------------------------------/*/
+@mixin scale($widscl, $heiscl) {
+	width: $widscl;
+	height: $heiscl;
+}
+
+@mixin pdng($pd) {
+	padding: $pd 0 $pd 0;
+}
+
+@mixin mrgn($mg) {
+	margin: $mg auto $mg auto;
+}
+
+@mixin align($aTop, $aLeft, $aBottom, $aRight) {
+	// position: absolute; とセットで使って。
+	display: block;
+	top: $aTop;
+	left: $aLeft;
+	bottom: $aBottom;
+	right: $aRight;
+	margin: auto;
+}
