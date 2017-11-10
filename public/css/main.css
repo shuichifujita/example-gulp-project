@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/*/--------------------------------\*!*¡ MIXINS/VARIABLES
+\*\--------------------------------/*/
+/*/--------------------------------\*|*| VARIABLES
+\*\--------------------------------/*/
+/*/--------------------------------\*|*| MIXIN
+\*\--------------------------------/*/
+/*/--------------------------------\*!*¡ PARTIALS(DEFAULT)
+\*\--------------------------------/*/
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900);
+* {
+  color: #FFF;
+  font-size: 16px;
+  font-weight: lighter;
+  letter-spacing: 0;
+  text-decoration: none;
+  font-family: 'Source Code Pro', Monaco, YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; }
+
+body {
+  background: #000; }
+
+body, main, section, article, div, h1, h2, h3, h4, h5, p, a, ul, li, figure, figcaption, dl, dt, dd {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+ul li {
+  list-style: none; }
+
+img {
+  outline: none; }
+
+/*/--------------------------------\*!*¡ PARTIALS
+\*\--------------------------------/*/
+header {
+  width: 100%;
+  padding: 32px 0 32px 0;
+  background: #222222; }
+  header h1 {
+    font-size: 3em;
+    text-align: center; }
+
+main {
+  min-height: 720px;
+  margin: 0 auto; }
+  main section {
+    width: 75%;
+    height: auto;
+    margin: 32px auto 32px auto;
+    border: 1px solid #FFF; }
+
+footer {
+  width: 100%;
+  padding: 32px 0 32px 0;
+  background: #222222; }
+  footer p {
+    font-size: 1em;
+    text-align: center; }
+
+/*/--------------------------------\*!*¡ MODULES
+\*\--------------------------------/*/
+.amoeba {
+  display: block;
+  width: 99%;
+  height: 480px;
+  margin: 0 auto 0 auto; }
