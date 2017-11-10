@@ -1,10 +1,9 @@
 {
   "name": "example-gulp-project",
   "version": "1.0.0",
-  "description": "to study",
-  "main": "gulpfile?",
+  "description": "to study gulp",
+  "main": "npm script",
   "scripts": {
-    "test": "console.log('Command not set.')",
     "gulp": "gulp default",
     "build": "gulp run",
     "sync": "gulp sync"

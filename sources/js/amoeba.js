@@ -1,9 +1,9 @@
-module.exports = () => {
+module.exports = $(() => {
 	/*/--------------------------------\*\
 	|*| VARIABLES
 	\*\--------------------------------/*/
 	// const
-	const fps = 60;
+	const fps = 30;
 	const frameMsec = 100 / fps >> 0;
 	const ballNum = 500;
 
@@ -62,7 +62,7 @@ module.exports = () => {
 	function onDraw() {
 		// reset
 		clearDisp();
-		//draw
+		// draw
 		smallball();
 	}
 
@@ -109,7 +109,7 @@ module.exports = () => {
 		let b = Math.floor(Math.random() * 256);
 		return "rgba(" + r + "," + g + "," + b + "," + 1 + ")";
 	}
-};
+});
 
 
 
