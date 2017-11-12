@@ -63,7 +63,7 @@ module.exports = $(() => {
 	function onDraw() {
 		// reset
 		clearDisp();
-		//draw
+		// draw
 		smallball();
 	}
 
