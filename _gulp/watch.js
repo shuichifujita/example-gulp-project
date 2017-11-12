@@ -12,6 +12,8 @@ var watch = require('gulp-watch');
 // 直列。前のタスクが終了したら次へ。
 // watchでのタスク指定は依存関係にある一番最後のもの。
 gulp.task('run', function() {
+  // html
+  gulp.watch('./sources/views/**/*.html', ['copy:html']);
   // css
   gulp.watch('./sources/scss/**/*.scss', ['build:sass']);
   // js
