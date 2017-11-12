@@ -8,10 +8,12 @@
 nodejs/npmは入っていることを前提とします。
 下記コマンドをたたくのです。
 
-install: `$ npm install`
-gulp: `$ npm run gulp`
+* install: `$ npm install`
+* gulp: `$ npm run gulp`
 
 ## memo
 nodejsのバージョンがやたら新しい。
+
 npm script経由でgulpを走らせているのでgulpをグローバルインストールする必要はない。
-htmlと画像もコピーするようにする。
+
+画像(assets)もコピーするようにする。
