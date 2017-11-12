@@ -5,7 +5,7 @@
   "main": "npm script",
   "scripts": {
     "gulp": "gulp default",
-    "build": "gulp run",
+    "build": "gulp build",
     "sync": "gulp sync"
   },
   "repository": {
