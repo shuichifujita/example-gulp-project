@@ -1,4 +1,5 @@
 $(() => {
 	// require modules
-	var amoeba = require('./amoeba.js');
+	// let amoeba = require('./amoeba.js');
+	let printData = require('./printData.js');
 });

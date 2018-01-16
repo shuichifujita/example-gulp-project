@@ -1,122 +1,105 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-module.exports = $(() => {
-	/*/--------------------------------\*\
- |*| VARIABLES
- \*\--------------------------------/*/
-	// const
-	const fps = 30;
-	const frameMsec = 100 / fps >> 0;
-	const ballNum = 500;
-
-	// set canvas
-	let cvs = $(".amoeba").get(0);
-	let ctx = cvs.getContext("2d");
-
-	// canvas scale
-	cvs.width = $(".amoeba").width();
-	cvs.height = $(".amoeba").height();
-	let width = cvs.width;
-	let height = cvs.height;
-
-	// set center
-	let centerX = width / 2;
-	let centerY = height / 2;
-
-	// first points
-	let locX = new Array(ballNum);
-	let locY = new Array(ballNum);
-
-	// set speed
-	let speedX = new Array(ballNum);
-	let speedY = new Array(ballNum);
-
-	// set obj and radius
-	let ball = new Array(ballNum);
-
-	// color
-	let white = "rgba(255,255,255,1)";
-	let gray = "rgba(153,153,153,1)";
-	let black = "rgba(0,0,0,1)";
-	let bgcolor = "#000";
-
-	/*/--------------------------------\*\
- |*| INIT/PLAY
- \*\--------------------------------/*/
-	$(() => {
-		for (var i = 0; i < ballNum; i++) {
-			// speed
-			speedX[i] = (Math.random() - 0.5) * 4;
-			speedY[i] = (Math.random() - 0.5) * 4;
-			// first points
-			locX[i] = Math.random() * width;
-			locY[i] = Math.random() * height;
-			// radius
-			ball[i] = Math.random() * 32;
-		}
-		// set event handler
-		setInterval(onDraw, frameMsec);
-	});
-
-	/*/--------------------------------\*\
- |*| INTERVAL HANDLER
- \*\--------------------------------/*/
-	function onDraw() {
-		// reset
-		clearDisp();
-		// draw
-		smallball();
-	}
-
-	/*/--------------------------------\*\
- |*| OBJECTS
- \*\--------------------------------/*/
-	// clear display
-	function clearDisp() {
-		ctx.beginPath();
-		ctx.clearRect(0, 0, width, height);
-	}
-
-	// small balls
-	function smallball() {
-		// set position
-		for (var i = 0; i < ballNum; i++) {
-			// overwrite position
-			locX[i] += speedX[i];
-			locY[i] += speedY[i];
-
-			// conflicted wall
-			if (locX[i] < 0 || locX[i] > width) {
-				speedX[i] *= -1.0;
-			} else if (locY[i] < 0 || locY[i] > height) {
-				speedY[i] *= -1.0;
-			}
-
-			// blur
-			ctx.shadowBlur = ball[i];
-			ctx.shadowColor = white;
-			// draw ball
-			ctx.beginPath();
-			ctx.fillStyle = black;
-			ctx.arc(locX[i], locY[i], ball[i], 0, Math.PI * 2.0, true);
-			ctx.fill();
-		}
-	}
-
-	// rondom color
-	function color() {
-		let r = Math.floor(Math.random() * 256);
-		let g = Math.floor(Math.random() * 256);
-		let b = Math.floor(Math.random() * 256);
-		return "rgba(" + r + "," + g + "," + b + "," + 1 + ")";
-	}
-});
-
-// -------- end -------- //
-
-},{}],2:[function(require,module,exports){
 $(() => {
 	// require modules
-	var amoeba = require('./amoeba.js');
+	// let amoeba = require('./amoeba.js');
+	let printData = require('./printData.js');
 });
 
-},{"./amoeba.js":1}]},{},[2]);
+},{"./printData.js":2}],2:[function(require,module,exports){
+module.exports = $(() => {
+  let orgData = {
+    1: { 'date': '0101', 'content': 'hogehoge' },
+    2: { 'date': '0102', 'content': 'hogehoge' },
+    3: { 'date': '0103', 'content': 'hogehoge' },
+    4: { 'date': '0104', 'content': 'hogehoge' },
+    5: { 'date': '0105', 'content': 'hogehoge' },
+    6: { 'date': '0106', 'content': 'hogehoge' },
+    7: { 'date': '0107', 'content': 'hogehoge' },
+    8: { 'date': '0108', 'content': 'hogehoge' },
+    9: { 'date': '0109', 'content': 'hogehoge' },
+    10: { 'date': '0110', 'content': 'hogehoge' }
+  };
+  let $list = $('.data-list');
+
+  // exec
+  Object.keys(orgData).forEach(key => {
+    $list.append(`<li>Data: ${orgData[key]['date']}, Content: ${orgData[key]['content']}</li>`);
+  });
+});
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+function postModifiedData() {
+
+  $('a.modified_data_post_btn').on('click', function () {
+
+    swal({
+      title: "修正したデータをアップデートしますか？",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true
+    }).then(willDelete => {
+      if (willDelete) {
+
+        // 取得データクラス
+        var data_num = $('th.order_date').length; // データ数
+        // post_modified_data  = []; // 修正されたデータを格納
+        var bbbbbbbbbbb = {}; // 修正されたデータを格納
+        var aaaaaaaaaaa = {}; // 修正された1行のデータを格納
+        var getting_data_class = ['order_date', 'total_orders', 'normal_orders', 'tradein_orders', 'arigato_orders', 'zozo_payment_count', 'member_orders', 'new_member_orders', 'new_db_member_orders', 'new_rb_member_orders', 'repeat_member_orders', 'repeat_db_member_orders', 'repeat_rb_member_orders', 'guest_orders']; // データ取得のクラス
+
+        var acd = {};
+        acd['order_date'] = $('th.order_date').eq(1).text();
+        acd['total_orders'] = Number($('.' + 'total_orders').eq(1).text().replace(/件/g, "").replace(/,/g, ""));
+        acd['normal_orders'] = Number($('.' + 'normal_orders').eq(1).text().replace(/件/g, "").replace(/,/g, ""));
+        acd['tradein_orders'] = Number($('.' + 'tradein_orders').eq(1).text().replace(/件/g, "").replace(/,/g, ""));
+
+        console.log(acd);
+        // データ取得と格納
+        for (var z = 0; z < data_num; z++) {
+
+          getting_data_class.forEach(function (class_name, index) {
+
+            if (class_name == 'order_date') {
+              acd[class_name] = $('th.order_date').eq(z).text();
+            } else {
+              acd[class_name] = Number($('.' + class_name).eq(z).text().replace(/件/g, "").replace(/,/g, ""));
+            }
+          });
+
+          bbbbbbbbbbb[z] = acd;
+        } // end for(var z = 0; z < data_num; z ++)
+
+        console.log(bbbbbbbbbbb);
+
+        // Ajax設定
+        $.ajaxSetup({
+          headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+        });
+
+        // Ajax
+        $.ajax({
+          url: '/admin/update_modified_data',
+          type: 'POST',
+          dataType: 'json',
+          data: {
+            'update_data': JSON.stringify(post_modified_data)
+          }
+        }).done(function (update_result) {
+
+          // UPDATE成功時の表示
+          swal("データをアップデートしました！", {
+            icon: "success"
+          });
+        }).fail(function () {
+          console.log("error");
+        });
+      }
+    });
+  });
+}
+
+},{}]},{},[1]);
