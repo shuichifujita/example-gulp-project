@@ -11,10 +11,10 @@ var autoprefixer = require('gulp-autoprefixer');
 \*\--------------------------------/*/
 // SCSS
 gulp.task('build:sass', function() {
-  var files = ['./sources/scss/main.scss'];
+  var files = ['./source/scss/app.scss'];
   gulp.src(files)
     .pipe(plumber()) // error時にwatchを止めないやつ
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(gulp.dest('./public/css/'));
+    .pipe(gulp.dest('./build/css/'));
 });

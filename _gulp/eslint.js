@@ -12,7 +12,7 @@ var eslint = require('gulp-eslint');
 /*eslint-env es6*/
 // ESlint
 gulp.task('lint:js', function() {
-	var files = ['./sources/**/*.js'];
+	var files = ['./source/**/*.js'];
 	return gulp.src(files)
 		.pipe(eslint({
 			"parser": "babel-eslint",

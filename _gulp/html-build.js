@@ -8,7 +8,7 @@ var gulp = require('gulp');
 \*\--------------------------------/*/
 // Copy html file to public directory
 gulp.task('copy:html', function() {
-  var files = ['./sources/views/**/*.html'];
+  var files = ['./source/view/**/*.html'];
   gulp.src(files)
-      .pipe(gulp.dest('./public/'));
+      .pipe(gulp.dest('./build/'));
 })

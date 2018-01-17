@@ -10,7 +10,7 @@ var browserSync = require('browser-sync').create();
 gulp.task('sync', function() {
 	browserSync.init({
 		server: {
-			baseDir: './public/'
+			baseDir: './build/'
 		}
 	});
 });

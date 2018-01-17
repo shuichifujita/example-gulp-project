@@ -13,11 +13,11 @@ var watch = require('gulp-watch');
 // watchでのタスク指定は依存関係にある一番最後のもの。
 gulp.task('build', ['compress:images'], function() {
   // html
-  gulp.watch('./sources/views/**/*.html', ['copy:html']);
+  gulp.watch('./source/views/**/*.html', ['copy:html']);
   // css
-  gulp.watch('./sources/scss/**/*.scss', ['build:sass']);
+  gulp.watch('./source/scss/**/*.scss', ['build:sass']);
   // js
-  gulp.watch('./sources/js/**/*.js', ['build:js']);
+  gulp.watch('./source/js/**/*.js', ['build:js']);
   // images
-  gulp.watch('./sources/assets/**/*.+(png|jpg|svg)', ['compress:images']);
+  gulp.watch('./source/assets/**/*.+(png|jpg|svg)', ['compress:images']);
 });

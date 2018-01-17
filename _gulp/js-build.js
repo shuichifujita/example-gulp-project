@@ -11,7 +11,7 @@ var through2 = require('through2');
 |*| TASKS
 \*\--------------------------------/*/
 gulp.task('build:js', ['lint:js'], function() {
-  var files = ['./sources/js/core.js'];
+  var files = ['./source/js/app.js'];
 
   gulp.src(files)
     .pipe(plumber()) // error時にwatchを止めないやつ
@@ -27,5 +27,5 @@ gulp.task('build:js', ['lint:js'], function() {
         });
     }))
     .on("error", function(err) { console.log("Error: " + err.message); })
-    .pipe(gulp.dest('./public/js/'));
+    .pipe(gulp.dest('./build/js/'));
 });

@@ -9,8 +9,8 @@ var imagemin = require('gulp-imagemin');
 \*\--------------------------------/*/
 // Copy html file to public directory
 gulp.task('compress:images', function() {
-  var files = ['./sources/assets/**/*.+(png|jpg|svg)'];
+  var files = ['./source/assets/**/*.+(png|jpg|svg)'];
   gulp.src(files)
       .pipe(imagemin())
-      .pipe(gulp.dest('./public/img/'));
+      .pipe(gulp.dest('./build/img/'));
 })
